@@ -126,13 +126,13 @@ export function Marketing() {
             <h1 className="text-2xl font-bold text-gray-900">Marketing & Sales</h1>
 
             {/* Crop Tabs */}
-            <div className="flex gap-2 border-b border-gray-200">
+            <div className="flex gap-2 overflow-x-auto border-b border-gray-200 -mx-4 px-4 md:mx-0 md:px-0">
                 {crops.map(c => (
                     <button
                         key={c.id}
                         onClick={() => setActiveCropId(c.id)}
                         className={cn(
-                            'flex items-center gap-2 rounded-t-md border border-b-0 px-4 py-2 text-sm font-medium transition-colors',
+                            'flex items-center gap-2 rounded-t-md border border-b-0 px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap',
                             c.id === activeCropId
                                 ? 'border-gray-200 bg-white text-gray-900 -mb-px'
                                 : 'border-transparent bg-gray-100 text-gray-500 hover:text-gray-700',
@@ -147,7 +147,7 @@ export function Marketing() {
             {crop && (
                 <>
                     {/* Summary Cards */}
-                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                         <SummaryCard
                             label="Bushels Sold"
                             value={formatNumber(totalBushelsSold(cropSales))}

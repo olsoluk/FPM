@@ -4,7 +4,7 @@ import {
 import { useFarmStore, type Page } from '../store/farmStore';
 import { cn } from '../lib/utils';
 
-const NAV_ITEMS: { page: Page; label: string; icon: typeof Settings }[] = [
+export const NAV_ITEMS: { page: Page; label: string; icon: typeof Settings }[] = [
     { page: 'setup', label: 'Farm Setup', icon: Settings },
     { page: 'production', label: 'Crop Production', icon: Wheat },
     { page: 'summary', label: 'Summary', icon: LayoutDashboard },
@@ -19,7 +19,7 @@ export function Sidebar() {
     const farmName = useFarmStore(s => s.farm.name);
 
     return (
-        <aside className="no-print flex w-60 flex-col border-r border-gray-200 bg-white">
+        <aside className="no-print flex h-full w-60 flex-col border-r border-gray-200 bg-white">
             {/* Brand */}
             <div className="flex items-center gap-3 border-b border-gray-200 px-4 py-5">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-farm-600 text-white font-bold text-sm">

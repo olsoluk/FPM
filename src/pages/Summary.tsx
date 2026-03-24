@@ -38,9 +38,9 @@ export function Summary() {
 
     return (
         <div className="space-y-4">
-            <div className="no-print flex items-center justify-between">
+            <div className="no-print flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <h1 className="text-2xl font-bold text-gray-900">Income & Expense Summary</h1>
-                <button onClick={() => handlePrint()} className="btn-secondary">
+                <button onClick={() => handlePrint()} className="btn-secondary self-start">
                     <Printer className="h-4 w-4" />
                     Print / PDF
                 </button>
@@ -48,7 +48,7 @@ export function Summary() {
 
             <div ref={printRef} className="space-y-6 bg-white p-4">
                 {/* Header */}
-                <div className="flex flex-wrap items-start justify-between gap-4 border-b border-gray-200 pb-4">
+                <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between border-b border-gray-200 pb-4">
                     <div>
                         <h2 className="text-xl font-bold text-gray-900">INCOME & EXPENSE SUMMARY</h2>
                         <div className="text-sm text-gray-500">{farm.name} — {farm.year}</div>
